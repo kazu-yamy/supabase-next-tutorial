@@ -5,7 +5,7 @@ import TodoList from "./TodoList";
 
 const TodoApp = () => {
   const [todos, setTodos] = useState<any>([]);
-  const [title, setTitle] = useState<string>();
+  const [title, setTitle] = useState<string>("");
 
   useEffect(() => {
     const getTodos = async () => {
@@ -41,7 +41,7 @@ const TodoApp = () => {
           Add
         </button>
       </form>
-      <TodoList todos={todos} />
+      <TodoList todos={todos} setTodos={setTodos} />
     </section>
   );
 };
