@@ -1,6 +1,10 @@
-import { supabase } from "../utils/supabase";
+import { supabase } from "./supabase";
 
 export const getAllTodos = async () => {
-    const todos = await supabase.from('todo').select('*');
-    return todos.data;
-}
+  const todos = await supabase.from("todo").select("*");
+  return todos.data;
+};
+
+export const addTodo = async (title: string | undefined) => {
+  await supabase.from("todo").insert({ title: title });
+};
